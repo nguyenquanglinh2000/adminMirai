@@ -18,6 +18,7 @@
           :src="require(`@/assets/images/logo.png`)"
         />
       </div>
+      <v-btn color="red" @click="logout">Logout</v-btn>
       <v-spacer />
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
@@ -42,6 +43,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import DropDown from "@/components/DropDownSideBarComponent.vue";
 export default {
   name: "DefaultLayout",
@@ -58,6 +60,9 @@ export default {
       right: true,
       rightDrawer: false,
     };
+  },
+  methods: {
+    ...mapActions("authenticated", ["logout"]),
   },
 };
 </script>
