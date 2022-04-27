@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <div class="">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -18,17 +18,15 @@
           :src="require(`@/assets/images/logo.png`)"
         />
       </div>
-      <v-btn color="red" @click="logout">Logout</v-btn>
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+      <v-btn outlined color="red" @click="logout">Logout</v-btn>
+      <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
-    <v-main>
-      <v-container>
-        <router-view />
-      </v-container>
-    </v-main>
+    <v-container>
+      <router-view />
+    </v-container>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-item @click.native="right = !right">
@@ -39,7 +37,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-app>
+  </div>
 </template>
 
 <script>

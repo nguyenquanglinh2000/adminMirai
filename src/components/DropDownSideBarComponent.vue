@@ -1,14 +1,12 @@
 <template>
   <div>
-    <!-- <v-list> -->
-    <!-- <v-list-action> -->
     <div class="home">
-      <v-icon class="pr-1">mdi-apps</v-icon>
-      <!-- </v-list-action> -->
-      Trang Chủ
+      <router-link to="/">
+        <v-icon class="pr-1">mdi-apps</v-icon>
+        Trang Chủ
+      </router-link>
     </div>
-    <!-- </v-list> -->
-    <div v-for="(item, index) in items" :key="index">
+    <div v-for="(item, index) in items" :key="index" class="pr-2">
       <v-expansion-panels flat focusable>
         <v-expansion-panel>
           <v-expansion-panel-header expand-icon>
@@ -77,7 +75,6 @@ export default {
 }
 
 a {
-  margin-left: 16px;
   text-decoration: none;
   color: black !important;
 

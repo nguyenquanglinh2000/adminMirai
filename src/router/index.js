@@ -12,8 +12,8 @@ const routes = [
     component: HomeView,
     children: [
       {
-        path: "/contract-list",
-        name: "contract-list",
+        path: "/contracts",
+        name: "contracts",
         component: () => import("@/views/Contract.vue"),
       },
     ],
@@ -44,7 +44,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const auth = authen.state.isLogin;
+  const auth = !authen.state.isLogin;
   if (to.matched.some((route) => route.meta.requiresAuth)) {
     if (auth) {
       next();
