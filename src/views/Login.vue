@@ -69,8 +69,8 @@ export default {
       // const { name, ...list } = this.testES6.testES62;
       // console.log(list);
       isShowPassword: false,
-      username: "",
-      password: "",
+      username: "admin",
+      password: "123456",
       rules: {
         required: (value) => !!value || "Required.",
         min: (v) => v.length >= 4 || "Min 4 characters",

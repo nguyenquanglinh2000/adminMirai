@@ -77,7 +77,11 @@
       </template>
     </v-simple-table>
     <div class="text-center d-flex justify-center">
-      <v-pagination v-model="page" :length="maxPaging"></v-pagination>
+      <v-pagination
+        v-if="maxPaging"
+        v-model="page"
+        :length="maxPaging"
+      ></v-pagination>
     </div>
   </div>
 </template>

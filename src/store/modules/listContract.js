@@ -4,12 +4,12 @@ import auth from "./authenticated";
 const state = {
   listContract: {},
   pages: "",
+  test: 1,
 };
 const actions = {
   async getListContract({ commit }, payload) {
     const token = auth.state.token;
     try {
-      console.log("Actions");
       const url =
         "http://qlda.miraisoft.com.vn/api/contract/all-contract?pageSize=" +
         payload.select +
@@ -24,7 +24,6 @@ const actions = {
           Authorization: "Bearer " + token,
         },
       });
-      console.log(list.data);
       commit("UPDATE_LIST", list.data);
     } catch (error) {
       console.log(error);
@@ -37,7 +36,12 @@ const mutations = {
     state.pages = data.pages;
   },
 };
-const getters = {};
+const getters = {
+  oneCount(state) {
+    console.log("OK");
+    return (state.test += 1);
+  },
+};
 
 export default {
   namespaced: true,
